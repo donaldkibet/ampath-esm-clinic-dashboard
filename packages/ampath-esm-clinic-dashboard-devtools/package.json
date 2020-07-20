@@ -1,0 +1,56 @@
+{
+    "name": "@ampath/esm-clinic-dashboard-devtools-app",
+    "version": "0.1.0",
+    "description": "The list reports for the HIV departement.",
+    "keywords": [
+      "ampath",
+      "hiv",
+      "list",
+      "widgets",
+      "esm",
+      "spa"
+    ],
+    "author": "AMPATH",
+    "homepage": "https://github.com/AMPATH/ampath-esm-clinic-dashboard-devtools#readme",
+    "license": "MIT",
+    "main": "dist/ampath-esm-clinic-dashboard-devtools.js",
+    "files": [
+      "dist"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/AMPATH/ampath-esm-clinic-dashboard.git"
+    },
+    "scripts": {
+      "start": "webpack-dev-server --port ${port:-8080}",
+      "build": "webpack --mode production",
+      "test": "jest"
+    },
+    "bugs": {
+      "url": "https://github.com/AMPATH/ampath-esm-clinic-dashboard/devtools/issues"
+    },
+    "dependencies": {
+      "single-spa-react": "^2.10.2",
+      "@types/systemjs": "^6.1.0",
+      "@openmrs/esm-module-config": "^1.2.0"
+    },
+    "devDependencies": {
+      "@openmrs/esm-api": "^1.2.2",
+      "@openmrs/esm-error-handling": "^1.1.0",
+      "@openmrs/react-root-decorator": "^2.0.0",
+      "@types/react": "^16.9.2",
+      "@types/react-dom": "^16.9.0",
+      "@types/react-router": "^5.0.3",
+      "@types/react-router-dom": "^5.1.5",
+      "@types/webpack-env": "^1.15.2",
+      "react": "^16.9.0",
+      "react-dom": "^16.9.0",
+      "react-router": "^5.0.1",
+      "react-router-dom": "^5.0.1",
+      "@reach/tabs": "^0.10.0",
+      "@types/systemjs": "^6.1.0",
+      "kremling": "^2.0.3",
+      "style-loader": "^1.1.3","lodash-es": "^4.17.15"
+    }
+  }
+  
