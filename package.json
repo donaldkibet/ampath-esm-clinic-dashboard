@@ -5,7 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "debug": "lerna run start --scope @ampath/esm-clinic-dashboard-${name:-hiv-lists} --stream",
+    "debug": "lerna run start --scope @ampath/esm-clinic-dashboard-${name:-hiv-lists}-app --stream",
     "build": "lerna run build --stream",
     "prettier": "prettier"
   },
