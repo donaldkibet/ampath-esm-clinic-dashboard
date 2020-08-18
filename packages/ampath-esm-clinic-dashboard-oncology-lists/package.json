@@ -1,7 +1,7 @@
 {
-  "name": "@ampath/esm-clinic-dashboard-hiv-lists-app",
+  "name": "@ampath/esm-clinic-dashboard-oncology-lists-app",
   "version": "0.1.0",
-  "description": "The list reports for the HIV department.",
+  "description": "The list reports for the Oncology departement.",
   "keywords": [
     "ampath",
     "hiv",
@@ -13,7 +13,7 @@
   "author": "AMPATH",
   "homepage": "https://github.com/AMPATH/ampath-esm-clinic-dashboard#readme",
   "license": "MIT",
-  "main": "dist/ampath-esm-clinic-dashboard-hiv-lists-app.js",
+  "main": "dist/ampath-esm-clinic-dashboard-oncology-lists.js",
   "files": [
     "dist"
   ],
@@ -22,19 +22,19 @@
     "url": "git+https://github.com/AMPATH/ampath-esm-clinic-dashboard.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --port ${port:-8080} --https",
+    "start": "webpack-dev-server --port ${port:-8080}",
     "build": "webpack --mode production",
-    "test": "jest --config jest.config.json"
+    "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/AMPATH/ampath-esm-clinic-dashboard/issues"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.11.5"
+    "single-spa-react": "^2.10.2"
   },
   "devDependencies": {
-    "@openmrs/esm-api": "^3.0.0",
-    "@openmrs/esm-error-handling": "^1.1.1",
+    "@openmrs/esm-api": "^1.2.2",
+    "@openmrs/esm-error-handling": "^1.1.0",
     "@openmrs/esm-module-config": "^1.2.0",
     "@openmrs/react-root-decorator": "^2.0.0",
     "@types/react": "^16.9.2",
@@ -42,11 +42,9 @@
     "@types/react-router": "^5.0.3",
     "@types/react-router-dom": "^5.1.5",
     "@types/webpack-env": "^1.15.2",
-    "lodash-es": "^4.17.15",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1",
-    "single-spa-react": "^2.10.2"
+    "react-router-dom": "^5.0.1"
   }
 }
