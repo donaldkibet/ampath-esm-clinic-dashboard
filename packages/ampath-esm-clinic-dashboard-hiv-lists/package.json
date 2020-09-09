@@ -24,7 +24,7 @@
   "scripts": {
     "start": "webpack-dev-server --port ${port:-8080}",
     "build": "webpack --mode production",
-    "test": "jest"
+    "test": "jest --config jest.config.json"
   },
   "bugs": {
     "url": "https://github.com/AMPATH/ampath-esm-clinic-dashboard/issues"
@@ -34,7 +34,7 @@
     "single-spa-react": "^2.10.2"
   },
   "devDependencies": {
-    "@openmrs/esm-api": "^1.2.2",
+    "@openmrs/esm-api": "^3.0.0",
     "@openmrs/esm-error-handling": "^1.1.1",
     "@openmrs/esm-module-config": "^1.2.0",
     "@openmrs/react-root-decorator": "^2.0.0",

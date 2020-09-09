@@ -1,80 +1,58 @@
 import React, { Fragment } from "react";
 import { EtlReportData } from "../types/types";
 import styles from "./report-view.css";
+import { useHistory } from "react-router-dom";
+import { getColumns } from "../utils/utils";
 
 const ReportView: React.FC<EtlReportData> = ({
-  indicatorDefinitions,
   result,
-  queriesAndSchemas,
   sectionDefinitions,
+  params,
 }) => {
-  const [reportData, setReportData] = React.useState<Array<any>>();
+  const [columnDefs, setColumnDefs] = React.useState<Array<any>>();
+  let history = useHistory();
 
   React.useEffect(() => {
-    if (sectionDefinitions && result) {
-      let headers = [];
-      let defs = [];
-      let sumOfValue = [];
-      let locations = [];
-      for (let i = 0; i < sectionDefinitions.length; i++) {
-        const section = sectionDefinitions[i];
-        const created: any = {};
-        created.headerName = section.sectionTitle;
-        const header = {
-          label: section.sectionTitle,
-          value: i,
-        };
-        headers.push(header);
-        created.children = [];
-        for (let j = 0; j < section.indicators.length; j++) {
-          const indicatorDefinition = section.indicators[j].indicator;
-          const child: any = {
-            headerName: section.indicators[j].label,
-            field: section.indicators[j].indicator,
-            description: section.indicators[j].description,
-            value: [],
-            width: 360,
-            total: 0,
-          };
-          result.forEach((element) => {
-            const val: any = {
-              location: element["location_uuid"],
-              value: "-",
-            };
-            if (
-              element[indicatorDefinition] ||
-              element[indicatorDefinition] === 0
-            ) {
-              val.value = element[indicatorDefinition];
-              sumOfValue.push(val.value);
-              locations.push(element["location_uuid"]);
-            }
-
-            child.value.push(val);
-          });
-          created.children.push(child);
-        }
-        defs.push(created);
-      }
-      setReportData(defs);
-    }
+    setColumnDefs(getColumns(sectionDefinitions, result));
   }, []);
+
+  const navigateToPatientList = (indicators) => {
+    const { endDate, locationUuids } = params;
+    history.push(
+      `/home/list/${endDate}/${indicators.field}/${locationUuids}/${indicators.indicatorName}`
+    );
+  };
 
   return (
     <div className={styles.reportViewContainer}>
       <table>
-        {reportData &&
-          reportData.map((data, index) => (
+        {columnDefs &&
+          columnDefs.map((data, index) => (
             <tbody key={index}>
               <tr>
-                <td className={styles.reportTableHeader} colSpan={2}>{data.headerName}</td>
+                <td className={styles.reportTableHeader} colSpan={2}>
+                  {data.headerName}
+                </td>
               </tr>
-              {data.children.map((child, index) => (
-                <tr key={index}>
-                  <td>{child.headerName}</td>
-                  <td>{child.value[0].value}</td>
-                </tr>
-              ))}
+              {data.children.map((child, index) => {
+                return (
+                  <tr
+                    tabIndex={1}
+                    onClick={() =>
+                      navigateToPatientList({
+                        field: child.field,
+                        value: child.value[0].value,
+                        indicatorName: child.headerName,
+                      })
+                    }
+                    key={index}
+                    className={styles.indicator}
+                  >
+                    <td>{child.headerName}</td>
+                    <td>{child?.value[0] ? child?.value[0].value : " - "}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           ))}
       </table>

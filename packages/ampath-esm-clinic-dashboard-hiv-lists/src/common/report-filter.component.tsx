@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./report-filter.css";
 
 interface ReportFilterProps {
-  onInputChange: Function;
+  children: React.ReactNode;
 }
 
-const ReportFilter: React.FC<ReportFilterProps> = ({ onInputChange }) => {
+const ReportFilter: React.FC<ReportFilterProps> = ({ children }) => {
   const [displayReportFilters, setDisplayReportFilters] = React.useState(true);
   const toggleReportFilters = () => {
     setDisplayReportFilters(!displayReportFilters);
@@ -31,17 +31,7 @@ const ReportFilter: React.FC<ReportFilterProps> = ({ onInputChange }) => {
           )}
         </span>
       </div>
-      <div className={displayReportFilters ? "" : styles.hide}>
-        <div className={styles.inputContainer}>
-          <label htmlFor="endDate">End Date</label>
-          <input
-            type="date"
-            name="endDate"
-            id="endDate"
-            onChange={($evt) => onInputChange($evt.target.value)}
-          />
-        </div>
-      </div>
+      <div className={displayReportFilters ? "" : styles.hide}>{children}</div>
     </div>
   );
 };

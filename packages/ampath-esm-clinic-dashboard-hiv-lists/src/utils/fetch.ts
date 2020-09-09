@@ -10,7 +10,7 @@ export function amrsFetch(url: RequestInfo, options?: RequestInit | null) {
       headers: {
         ...headers,
       },
-      ...options
+      ...options,
     })
     .then((resp) => resp.json())
     .then((resp) => resp);

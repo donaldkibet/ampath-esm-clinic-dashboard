@@ -3,4 +3,5 @@ export interface EtlReportData {
   queriesAndSchemas: Array<any>;
   result: Array<any>;
   sectionDefinitions: Array<any>;
+  params: any;
 }

@@ -4,6 +4,7 @@ import { defineConfigSchema } from "@openmrs/esm-module-config";
 import openmrsRootDecorator from "@openmrs/react-root-decorator";
 import { handleMessage, sendMessage } from "./utils/utils";
 import OVCReport from "./ovc-report/ovc-report.component";
+import OVCPatientList from "./ovc-report/ovc-patient-list.component";
 
 const Home: React.FC = () => <div>Hello World!</div>;
 
@@ -22,7 +23,12 @@ const Root: React.FC = () => {
 
   return (
     <BrowserRouter basename={window["getOpenmrsSpaBase"]()}>
-      <OVCReport />
+      <Route exact path="/home" component={OVCReport} />
+      <Route
+        exact
+        path="/home/list/:endDate?/:indicators?/:locationUuids?/:indicatorName?"
+        render={(routerProps) => (<OVCPatientList {...routerProps} />)}
+      />
     </BrowserRouter>
   );
 };

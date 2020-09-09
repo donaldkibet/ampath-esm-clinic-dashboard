@@ -1,26 +1,32 @@
 import React from "react";
 import styles from "./patient-list.css";
 import { colDef } from "../types";
+import { sendMessage } from "../utils/utils";
 
 interface PatientListProps {
   columnsDef: Array<colDef>;
   rowData: Array<any>;
   indicator: string;
+  indicatorName: string;
 }
 
 const PatientList: React.FC<PatientListProps> = ({
   columnsDef,
   rowData,
   indicator,
+  indicatorName,
 }) => {
-  const navigate = (rowData: HTMLTableRowElement) => {
-    console.log(rowData);
+  const navigate = (rowData) => {
+    sendMessage({
+      navigate: { patientUuid: rowData.patient_uuid },
+      action: "navigate",
+    });
   };
   return (
     <div className={styles["patient-list-container"]}>
       <div className={styles["indicator-title"]}>
         <span>
-          <b>{indicator}</b> patient list
+          <b>{indicatorName}</b> patient list
         </span>
       </div>
       <hr />
@@ -29,7 +35,7 @@ const PatientList: React.FC<PatientListProps> = ({
           <thead>
             <tr>
               {columnsDef.map((column) => (
-                <th key={column.headerName} style={column.cellStyle}>
+                <th key={column.headerName}>
                   <div>{column.headerName}</div>
                 </th>
               ))}
@@ -39,7 +45,11 @@ const PatientList: React.FC<PatientListProps> = ({
             {rowData.map((rowData, index) => (
               <tr key={index} onClick={() => navigate(rowData)}>
                 {columnsDef.map((col) => (
-                  <td key={col.field}>{rowData[col.field]}</td>
+                  <td key={col.field} style={col.cellStyle}>
+                    {col.cellRender
+                      ? col.cellRender(rowData[col.field])
+                      : rowData[col.field]}
+                  </td>
                 ))}
               </tr>
             ))}

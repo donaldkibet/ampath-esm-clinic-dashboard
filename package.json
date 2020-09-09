@@ -6,6 +6,7 @@
   ],
   "scripts": {
     "debug": "lerna run start --scope @ampath/esm-clinic-dashboard-${name:-hiv-lists}-app --stream",
+    "test": "lerna run test",
     "build": "lerna run build --stream",
     "prettier": "prettier"
   },
@@ -34,6 +35,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@testing-library/react": "^11.0.2",
+    "identity-obj-proxy": "^3.0.0",
+    "moment": "^2.27.0",
     "style-loader": "^1.2.1"
   }
 }
