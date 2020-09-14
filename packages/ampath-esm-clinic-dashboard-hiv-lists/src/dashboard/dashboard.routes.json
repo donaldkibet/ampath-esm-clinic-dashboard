@@ -1,0 +1,14 @@
+[
+  {
+    "name": "CROSS BORDER REPORT",
+    "description": "Cross border intergration Report",
+    "url": "/home/cross-border-report",
+    "icon": "omrs-icon-menu"
+  },
+  {
+    "name": "OVC REPORT",
+    "description": "Orphans and Vulnarable Children",
+    "url": "/home/ovc-report",
+    "icon": "omrs-icon-supervised-user-circle"
+  }
+]

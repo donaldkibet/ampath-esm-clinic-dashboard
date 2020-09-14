@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./patient-list.css";
+import styles from "./patient-list.component.css";
 import { colDef } from "../types";
-import { sendMessage } from "../utils/utils";
+import { useMessageEventHandler } from "../custom-hooks/useMessageEventHandler";
 
 interface PatientListProps {
   columnsDef: Array<colDef>;
@@ -16,6 +16,7 @@ const PatientList: React.FC<PatientListProps> = ({
   indicator,
   indicatorName,
 }) => {
+  const { sendMessage } = useMessageEventHandler();
   const navigate = (rowData) => {
     sendMessage({
       navigate: { patientUuid: rowData.patient_uuid },

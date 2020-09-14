@@ -1,0 +1,51 @@
+.reportButton {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.625rem;
+}
+
+.reportButton > button {
+  cursor: pointer;
+}
+
+.report-filters {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 0.625rem;
+  padding: 0.625rem;
+  width: 100%;
+}
+
+.inputContainer label {
+  padding: 0.125rem 0rem;
+  font-weight: 500;
+}
+
+.inputContainer input {
+  outline: none;
+  border: 0.0625rem solid lightgrey;
+  padding: 0.625rem;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  color: var(--omrs-color-danger);
+  border: 0.0625rem solid var(--omrs-color-danger);
+  margin: 0.125rem;
+  justify-content: space-between;
+  padding: 0.625rem;
+}
+
+.error > div {
+  display: flex;
+  align-items: center;
+  color: var(--omrs-color-danger);
+  margin: 0.125rem;
+}

@@ -1,0 +1,54 @@
+body,
+html {
+  background-color: white !important;
+  scroll-behavior: smooth;
+}
+.home-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.home-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0.325rem 0.625rem;
+  border: 0.0625rem solid var(--omrs-color-ink-low-contrast);
+  border-radius: 0.25rem;
+  height: 10rem;
+  width: 16rem;
+  justify-content: center;
+  margin: 0.625rem;
+}
+
+.home-link:hover {
+  background-color: var(--omrs-color-bg-medium-contrast);
+}
+
+.report-title-container {
+  display: flex;
+  width: 100%;
+}
+
+.report-title {
+  text-decoration: none;
+  color: #333333;
+  font-size: 1.2rem;
+  padding: 0.25rem 0rem;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.report-icon {
+  margin: 0.325rem;
+}
+
+.report-icon svg {
+  height: 3.5rem;
+  width: 3.5rem;
+}

@@ -1,0 +1,26 @@
+.reportViewContainer {
+  display: flex;
+  background-color: var(--omrs-color-ink-white);
+  margin: 0.625rem;
+  padding: 0.625rem;
+}
+
+.reportViewContainer table {
+  width: 100%;
+}
+
+.reportViewContainer table th,
+td {
+  padding: 0.625rem;
+  border: 0.0625rem solid lightgray;
+}
+
+.reportTableHeader {
+  background-color: var(--omrs-color-interaction-plus-one);
+  color: var(--omrs-color-ink-white);
+}
+
+.indicator:hover {
+  cursor: pointer;
+  background-color: #eff2fc;
+}

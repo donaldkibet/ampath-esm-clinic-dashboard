@@ -1,0 +1,18 @@
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0rem 0.25rem 0.625rem 0rem;
+}
+.header {
+  color: var(--omrs-color-success);
+  display: flex;
+  align-items: center;
+  margin: 0rem;
+  fill: var(--omrs-color-success);
+  font-size: 1.375rem;
+}
+
+.header span {
+  padding-right: 0.625rem;
+}
