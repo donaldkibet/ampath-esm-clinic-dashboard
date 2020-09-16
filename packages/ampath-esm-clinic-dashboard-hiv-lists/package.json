@@ -1,50 +1,52 @@
 {
-  "name": "@ampath/esm-clinic-dashboard-hiv-lists",
-  "version": "0.1.0",
-  "description": "The list reports for the HIV departement.",
-  "keywords": [
-    "ampath",
-    "hiv",
-    "list",
-    "widgets",
-    "esm",
-    "spa"
-  ],
-  "author": "AMPATH",
-  "homepage": "https://github.com/AMPATH/ampath-esm-clinic-dashboard#readme",
-  "license": "MIT",
-  "main": "dist/ampath-esm-clinic-dashboard-hiv-lists.js",
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AMPATH/ampath-esm-clinic-dashboard.git"
-  },
-  "scripts": {
-    "start": "webpack-dev-server --port ${port:-8080}",
-    "build": "webpack --mode production",
-    "test": "jest"
-  },
-  "bugs": {
-    "url": "https://github.com/AMPATH/ampath-esm-clinic-dashboard/issues"
-  },
-  "dependencies": {
-    "single-spa-react": "^2.10.2"
-  },
-  "devDependencies": {
-    "@openmrs/esm-api": "^1.2.2",
-    "@openmrs/esm-error-handling": "^1.1.0",
-    "@openmrs/esm-module-config": "^1.2.0",
-    "@openmrs/react-root-decorator": "^2.0.0",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
-    "@types/react-router": "^5.0.3",
-    "@types/react-router-dom": "^5.1.5",
-    "@types/webpack-env": "^1.15.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1"
-  }
+    "name": "@ampath/esm-clinic-dashboard-hiv-lists",
+    "version": "0.1.0",
+    "description": "The list reports for the HIV departement.",
+    "keywords": [
+        "ampath",
+        "hiv",
+        "list",
+        "widgets",
+        "esm",
+        "spa"
+    ],
+    "author": "AMPATH",
+    "homepage": "https://github.com/AMPATH/ampath-esm-clinic-dashboard#readme",
+    "license": "MIT",
+    "main": "dist/ampath-esm-clinic-dashboard-hiv-lists.js",
+    "files": [
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AMPATH/ampath-esm-clinic-dashboard.git"
+    },
+    "scripts": {
+        "start": "webpack-dev-server --port ${port:-8080}",
+        "build": "webpack --mode production",
+        "test": "jest",
+        "lint": "eslint src --ext tsx",
+        "typescript": "tsc"
+    },
+    "bugs": {
+        "url": "https://github.com/AMPATH/ampath-esm-clinic-dashboard/issues"
+    },
+    "dependencies": {
+        "single-spa-react": "^2.10.2"
+    },
+    "devDependencies": {
+        "@openmrs/esm-api": "^1.2.2",
+        "@openmrs/esm-error-handling": "^1.1.0",
+        "@openmrs/esm-module-config": "^1.2.0",
+        "@openmrs/react-root-decorator": "^2.0.0",
+        "@types/react": "^16.9.2",
+        "@types/react-dom": "^16.9.0",
+        "@types/react-router": "^5.0.3",
+        "@types/react-router-dom": "^5.1.5",
+        "@types/webpack-env": "^1.15.2",
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
+        "react-router": "^5.0.1",
+        "react-router-dom": "^5.0.1"
+    }
 }
